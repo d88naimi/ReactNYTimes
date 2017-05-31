@@ -5,11 +5,11 @@ var React = require('react');
 
 // Here we include all of the sub-components
 var Form = require('./Children/Form');
-var Results = require('./Children/Results');
+var Results = require('./Children/Result');
 var Saved = require('./Children/Saved');
 
 // Helper Function
-var helpers = require('./utils/helpers.js');
+var helpers = require('./utils/helper.js');
 
 
 // This is the main component. 
