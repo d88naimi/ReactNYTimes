@@ -1,22 +1,27 @@
+//mongoose dependencies
 var moongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var ArticleSchema = new Schema({
-	title: String,
+	title:{
+
+	type: String,
 	trim: true,
 	required: " Need a Title"
 
 }, 
+
 date: { 
 type: Date,
 default: Date.now,
 required: " Date required"
+
 },
 
 url: {
 	type: String,
 	required: true
-	required: "URL required ",
+	required: "URL is Required",
 	uniquie: true
 }
 

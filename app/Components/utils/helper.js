@@ -1,4 +1,4 @@
-// Include the axios package for performing HTTP requests (promise based alternative to request)
+// Include the axios package for performing HTTP requests (promise based alternative to request Davey
 var axios = require('axios');
 
 // New York Times API

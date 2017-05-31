@@ -1,12 +1,16 @@
-var axios = require("axios");
+var axios = require('axios');
 
-var React = require("react");
+// Include React 
+var React = require('react');
 
-var Form = require("./Children/Form");
-var Results = require("./Children/Results");
-var Saved = require("./CHildren/Saved");
+// Here we include all of the sub-components
+var Form = require('./Children/Form');
+var Results = require('./Children/Results');
+var Saved = require('./Children/Saved');
 
-var helpers = require("./utils/helpers.js");
+// Helper Function
+var helpers = require('./utils/helpers.js');
+
 
 // This is the main component. 
 var Main = React.createClass({
@@ -94,7 +98,7 @@ var Main = React.createClass({
 
 				<div className="row">
 
-					<div className="jumbotron" style={{'backgroundImage': 'url(./assets/images/newspaper.jpg)', 'backgroundRepeat': 'no-repeat', 'backgroundPosition': 'center', 'backgroundSize': '100% 100%', 'backgroundAttachment': 'fixed'}}>
+					<div className="jumbotron" style={{'backgroundImage': 'url(./newspaper.jpeg)', 'backgroundRepeat': 'no-repeat', 'backgroundPosition': 'center', 'backgroundSize': '100% 100%', 'backgroundAttachment': 'fixed'}}>
 						<h2 className="text-center" style={{'color': 'white', 'textShadow': '3px 3px 10px black', 'fontSize': '54px'}}>New York Times Article Search and Save</h2>
 						<p className="text-center" style={{'color': 'white', 'textShadow': '3px 3px 10px black', 'fontSize': '24px'}}>Search for and save articles of interest!</p>
 					</div>
