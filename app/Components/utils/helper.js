@@ -4,18 +4,17 @@ var axios = require('axios');
 // New York Times API
 var nytAPI = "45ae6c35b10b457cbd8fd3541a4afc7d";
 
-
 // Helper Functions
 var helpers = {
 
 	runQuery: function(topic, startYear, endYear){
-
+		console.log("topic: " + topic);
 		//Figure out the geolocation
 		var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + nytAPI + "&q=" + topic + "&begin_date=" + startYear + "0101&end_date=" + endYear + "0101";
 
 		return axios.get(queryURL)
 			.then(function(response){
-
+				console.log(response)
 				var newResults = [];
 				var fullResults = response.data.response.docs;
 				var counter = 0;
@@ -45,7 +44,7 @@ var helpers = {
 		axios.post('/api/saved', {title: title, date: date, url: url})
 		.then(function(results){
 
-			console.log("Posted to MongoDB");
+			`console`.log("Posted to MongoDB");
 			return(results);
 		})
 	}

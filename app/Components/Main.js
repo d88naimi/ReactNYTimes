@@ -28,11 +28,15 @@ var Main = React.createClass({
 
 	// We use this function to allow children to update the parent with searchTerms.
 	setTerm: function(tpc, stYr, endYr){
+		console.log("setTerm called")
 		this.setState({
 			topic: tpc,
 			startYear: stYr,
 			endYear: endYr
-		})
+		});
+		console.log("here")
+		console.log(tpc);
+		helpers.runQuery(tpc, stYr, endYr);
 	},
 
 	saveArticle: function(title, date, url){
@@ -52,7 +56,7 @@ var Main = React.createClass({
 
 		this.getArticle();
 	},
-
+	// need to fix here to be called 
 	getArticle: function(){
 		axios.get('/api/saved')
 			.then(function(response){

@@ -8,7 +8,7 @@ var Article = require('./models/Article.js');
 
 var app = express();
 var PORT = process.env.PORT || 8080;
-
+var path = require('path');
 // Run Morgan for Logging
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -16,7 +16,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
-app.use(express.static('./public'));
+app.use('/public', express.static('./public'));
+
+// mongo db connection here 
 
 mongoose.connect('mongodb://localhost/nytreact');
 
@@ -25,20 +27,21 @@ mongoose.connect('mongodb://localhost/nytreact');
 var db = mongoose.connection;
 
 db.on("error", function(err){
-console.log("Mongoosey error: ", err);
+  console.log("Mongoosey error: ", err);
 });
 
 db.once("open", function(){
-console.log("Mongoose connection success my friend "  );
+  console.log("Mongoose connection success my friend "  );
 
 });
 
 app.get("/", function(req, res){
-res.sendFile("./public/index.html");
+  console.log(path.join(__dirname, "public/index.html"));
+  res.sendFile(path.join(__dirname, "public/index.html"));
 
 })
 
-app.get("./api/saved", function(req, res){
+app.get("/api/saved", function(req, res){
 	
 	Article.find({})
 	.exec(function(err, doc){
@@ -47,7 +50,7 @@ app.get("./api/saved", function(req, res){
 
 		}
 		else {
-			res.semd(doc);
+			res.send(doc);
 		}
 	})
 });

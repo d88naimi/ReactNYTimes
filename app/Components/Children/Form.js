@@ -13,7 +13,7 @@ var Form = React.createClass({
 		}
 	},
 	// function to responding to user input
-	handlechange: function(event) {
+	handleChange: function(event) {
 
 		var newState = {};
 		newState[event.target.id] = event.target.value;
