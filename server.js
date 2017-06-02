@@ -22,7 +22,16 @@ app.use('/public', express.static('./public'));
 
 mongoose.connect('mongodb://localhost/nytreact');
 
-// mongoose.connect('mongodb://heroku');
+
+//HpuyURKvitaJpZGO_4YxSPxtXNUMbOqo
+
+var uri = "mongodb://heroku_pzv76wlj:HpuyURKvitaJpZGO_4YxSPxtXNUMbOqo.mlab.com:61551/heroku_pzv76wlj";
+
+          //mongodb://<dbuser>:<dbpassword>@ds161551.mlab.com:61551/heroku_pzv76wlj
+
+
+// heroku connect
+mongoose.connect(uri);
 
 var db = mongoose.connection;
 
