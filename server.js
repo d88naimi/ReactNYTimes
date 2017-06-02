@@ -20,7 +20,7 @@ app.use('/public', express.static('./public'));
 
 // mongo db connection here 
 
-mongoose.connect('mongodb://localhost/nytreact');
+// mongoose.connect('mongodb://localhost/nytreact');
 
 
 //HpuyURKvitaJpZGO_4YxSPxtXNUMbOqo
